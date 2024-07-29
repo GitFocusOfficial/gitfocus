@@ -37,12 +37,21 @@
     <div class="main-container">
         <nav class="nav">
             <button class="nav-toggle" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
+                <i class="fas fa-bars"></i> MENU
             </button>
             <ul class="nav-menu">
-                <li><a href="#">Dashboards</a></li>
                 <li>
-                    <a href="#">Transactions <i class="fas fa-chevron-down"></i></a>
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Dashboard Icon">
+                        <span>Dashboards</span>
+                    </a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Transactions Icon">
+                        <span>Transactions</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <ul class="nav-submenu">
                         <li><a href="#">Bank Transactions</a></li>
                         <li><a href="#">Reconcile</a></li>
@@ -51,8 +60,12 @@
                         <li><a href="#">Recurring Transactions</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Sales <i class="fas fa-chevron-down"></i></a>
+                <li class="dropdown">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Sales Icon">
+                        <span>Sales</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <ul class="nav-submenu">
                         <li><a href="#">All Sales</a></li>
                         <li><a href="#">Invoices</a></li>
@@ -60,29 +73,79 @@
                         <li><a href="#">Products & Services</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Expenses <i class="fas fa-chevron-down"></i></a>
+                <li class="dropdown">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Expenses Icon">
+                        <span>Expenses</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <ul class="nav-submenu">
                         <li><a href="#">Expenses</a></li>
                         <li><a href="#">Suppliers</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#">Customer & Leads <i class="fas fa-chevron-down"></i></a>
+                <li class="dropdown">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Customer & Leads Icon">
+                        <span>Customer & Leads</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
                     <ul class="nav-submenu">
                         <li><a href="#">Customers</a></li>
                         <li><a href="#">Marketing</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Reports</a></li>
-                <li><a href="#">Employees</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Budgets</a></li>
-                <li><a href="#">Taxes</a></li>
-                <li><a href="#">Payroll</a></li>
-                <li><a href="#">Learning Center</a></li>
-                <li><a href="#">Inventory</a></li>
-                <li><a href="#">Fixed Assets</a></li>
+                <li class="dropdown">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Reports Icon">
+                        <span>Reports</span>
+                        <i class="fas fa-chevron-right"></i>
+                    </a>
+                    <ul class="nav-submenu">
+                        <li><a href="#">Balance Sheet</a></li>
+                        <li><a href="#">Income Statement</a></li>
+                        <li><a href="#">Statement of Equity</a></li>
+                        <li><a href="#">Statement of Cash Flows</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Employees Icon">
+                    <span>Employees</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Projects Icon">
+                    <span>Projects</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Budgets Icon">
+                    <span>Budgets</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Taxes Icon">
+                    <span>Taxes</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Payroll Icon">
+                    <span>Payroll</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Learning Center Icon">
+                    <span>Learning Center</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Inventory Icon">
+                    <span>Inventory</span>
+                </a></li>
+                <li><a href="#" class="menu-item">
+                    <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Fixed Assets Icon">
+                    <span>Fixed Assets</span>
+                </a></li>
+                <li class="menu-settings">
+                    <a href="#" class="menu-item">
+                        <img src="https://img.icons8.com/?size=16&id=158&format=png" alt="Settings Icon">
+                        <span>Menu Settings</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <main class="container">
@@ -90,7 +153,7 @@
             <p>Your go-to SaaS company for accounting, payroll, inventory, and more!</p>
         </main>
     </div>
-    <footer class="footer fixed-footer">
+    <footer class="footer">
         <div class="footer-content">
             <p>Copyright &copy; 2024 GitFocus. All Rights Reserved.</p>
             <ul class="footer-links">
@@ -107,13 +170,12 @@
             document.querySelector('.nav-menu').classList.toggle('nav-menu-visible');
         });
 
-        document.querySelectorAll('.nav-menu > li > a').forEach(function(menuItem) {
-            menuItem.addEventListener('click', function(event) {
-                var submenu = this.nextElementSibling;
-                if (submenu) {
-                    event.preventDefault();
-                    submenu.classList.toggle('nav-submenu-visible');
-                }
+        document.querySelectorAll('.dropdown > a').forEach(function(menuItem) {
+            menuItem.addEventListener('mouseenter', function() {
+                this.nextElementSibling.classList.add('nav-submenu-visible');
+            });
+            menuItem.addEventListener('mouseleave', function() {
+                this.nextElementSibling.classList.remove('nav-submenu-visible');
             });
         });
     </script>
