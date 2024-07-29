@@ -21,6 +21,9 @@
 
     <!-- Favicon -->
     <link rel="icon" href="https://img.icons8.com/?size=100&id=MfUoowC9ircP&format=png&color=000000" type="image/png">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header class="header">
@@ -29,50 +32,64 @@
                 <img src="https://img.icons8.com/?size=100&id=MfUoowC9ircP&format=png&color=000000" alt="GitFocus Logo" class="logo-img">
                 <h1 class="logo-text">GitFocus</h1>
             </a>
-            <nav class="nav">
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="chart_of_accounts.html">Chart of Accounts</a></li>
-                    <li><a href="general_ledger.html">General Ledger</a></li>
-                    <li><a href="accounts_receivable.html">Accounts Receivable</a></li>
-                    <li><a href="accounts_payable.html">Accounts Payable</a></li>
-                    <li><a href="inventory_management.html">Inventory Management</a></li>
-                    <li><a href="fixed_assets_management.html">Fixed Assets Management</a></li>
-                    <li><a href="tax_management.html">Tax Management</a></li>
-                    <li><a href="expense_management.html">Expense Management</a></li>
-                    <li><a href="reporting_analytics.html">Reporting & Analytics</a></li>
-                    <li><a href="integration_capabilities.html">Integration Capabilities</a></li>
-                    <li><a href="hris.html">HRIS</a></li>
-                    <li><a href="payroll.html">Payroll</a></li>
-                    <li><a href="learning_center.html">Learning Center</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
-    <main class="container">
-        <h1>Welcome to GitFocus</h1>
-        <p>Your go-to SaaS company for accounting, payroll, inventory, and more!</p>
-        
-        <!-- Placeholder for dynamic content -->
-        <section id="dynamic-content">
-            <h2>Our Modules</h2>
-            <ul>
-                <li><a href="chart_of_accounts.html">Chart of Accounts</a></li>
-                <li><a href="general_ledger.html">General Ledger</a></li>
-                <li><a href="accounts_receivable.html">Accounts Receivable</a></li>
-                <li><a href="accounts_payable.html">Accounts Payable</a></li>
-                <li><a href="inventory_management.html">Inventory Management</a></li>
-                <li><a href="fixed_assets_management.html">Fixed Assets Management</a></li>
-                <li><a href="tax_management.html">Tax Management</a></li>
-                <li><a href="expense_management.html">Expense Management</a></li>
-                <li><a href="reporting_analytics.html">Reporting & Analytics</a></li>
-                <li><a href="integration_capabilities.html">Integration Capabilities</a></li>
-                <li><a href="hris.html">HRIS</a></li>
-                <li><a href="payroll.html">Payroll</a></li>
-                <li><a href="learning_center.html">Learning Center</a></li>
+    <div class="main-container">
+        <nav class="nav">
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="#">Dashboards</a></li>
+                <li>
+                    <a href="#">Transactions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#">Bank Transactions</a></li>
+                        <li><a href="#">Reconcile</a></li>
+                        <li><a href="#">Rules</a></li>
+                        <li><a href="#">Chart of Accounts</a></li>
+                        <li><a href="#">Recurring Transactions</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Sales <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#">All Sales</a></li>
+                        <li><a href="#">Invoices</a></li>
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Products & Services</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Expenses <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#">Expenses</a></li>
+                        <li><a href="#">Suppliers</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Customer & Leads <i class="fas fa-chevron-down"></i></a>
+                    <ul class="nav-submenu">
+                        <li><a href="#">Customers</a></li>
+                        <li><a href="#">Marketing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Employees</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Budgets</a></li>
+                <li><a href="#">Taxes</a></li>
+                <li><a href="#">Payroll</a></li>
+                <li><a href="#">Learning Center</a></li>
+                <li><a href="#">Inventory</a></li>
+                <li><a href="#">Fixed Assets</a></li>
             </ul>
-        </section>
-    </main>
+        </nav>
+        <main class="container">
+            <h1>Welcome to GitFocus</h1>
+            <p>Your go-to SaaS company for accounting, payroll, inventory, and more!</p>
+        </main>
+    </div>
     <footer class="footer fixed-footer">
         <div class="footer-content">
             <p>Copyright &copy; 2024 GitFocus. All Rights Reserved.</p>
@@ -83,5 +100,22 @@
             </ul>
         </div>
     </footer>
+
+    <!-- JavaScript for collapsible menu -->
+    <script>
+        document.querySelector('.nav-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('nav-menu-visible');
+        });
+
+        document.querySelectorAll('.nav-menu > li > a').forEach(function(menuItem) {
+            menuItem.addEventListener('click', function(event) {
+                var submenu = this.nextElementSibling;
+                if (submenu) {
+                    event.preventDefault();
+                    submenu.classList.toggle('nav-submenu-visible');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
