@@ -19,20 +19,20 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
-    left: 0;
+    left: 0; /* Adjusted to cover full width */
     z-index: 1000;
 }
 
 .header-content {
     display: flex;
-    align-items: center;
+    align-items: center; /* Center items vertically */
     justify-content: space-between;
     padding: 10px 20px;
 }
 
 .logo-link {
     display: flex;
-    align-items: center;
+    align-items: center; /* Center items vertically */
     text-decoration: none;
     color: green;
 }
@@ -46,6 +46,9 @@ body {
 .logo-text {
     font-size: 24px;
     color: green;
+    line-height: 1; /* Adjust this to vertically center text within its line height */
+    display: flex;
+    align-items: center; /* Ensure the text is vertically centered within the flex container */
 }
 
 .header-right {
@@ -67,8 +70,8 @@ body {
 }
 
 .nav-toggle {
-    position: absolute;
-    top: 15px;
+    position: fixed; /* Fixed position to ensure it stays below the header */
+    top: 60px; /* Adjust this value to ensure it's below the header */
     left: 15px;
     background: none;
     border: none;
@@ -81,9 +84,9 @@ body {
     position: fixed;
     top: 60px; /* Adjust this value to ensure the menu is below the header */
     left: 0;
-    background: #fff;
+    background: gray;
     width: 250px;
-    height: 100%;
+    height: calc(100% - 60px); /* Adjust height to fit below the header */
     box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
     transform: translateX(-100%);
     transition: transform 0.3s ease;
@@ -101,7 +104,7 @@ body {
 }
 
 .nav-menu li {
-    margin: 15px 0;
+    margin: 5px 0;
 }
 
 .menu-item {
@@ -161,12 +164,22 @@ body {
 }
 
 .container {
-    padding: 80px 20px 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Adjust height to fit below the header */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+.container.shifted {
+    margin-left: 250px; /* Adjust based on the width of the menu */
 }
 
 h1 {
     color: green;
-    margin-bottom: 20px;
+    margin-bottom: 3px;
 }
 
 .footer {
@@ -179,30 +192,47 @@ h1 {
     padding: 10px 20px;
     text-align: center;
     z-index: 1000;
+    overflow: hidden; /* Prevent overflow */
+    transition: width 0.3s ease, margin-left 0.3s ease; /* Smooth transition */
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Center content horizontally */
     align-items: center;
+    max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
+    flex-wrap: wrap; /* Allow wrapping if content is too wide */
 }
 
 .footer-links {
     list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap; /* Allow wrapping if there’s not enough space */
 }
 
 .footer-links li {
-    display: inline;
+    display: inline-flex;
     margin: 0 10px;
 }
 
 .footer-links a {
     text-decoration: none;
     color: #333;
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .footer-links a:hover {
     text-decoration: underline;
+    color: green; /* Change color on hover for better visibility */
+}
+
+.footer.shifted {
+    margin-left: 250px; /* Adjust based on the width of the menu */
+    transition: margin-left 0.3s ease; /* Smooth transition */
 }
 
 /* Responsive Styles */
@@ -218,10 +248,32 @@ h1 {
 
     .nav {
         width: 100%;
+        height: calc(100% - 60px); /* Adjust height to fit below the header */
     }
 
     .nav-menu {
         padding: 10px;
+    }
+
+    .container.shifted {
+        margin-left: 0; /* Remove left margin on smaller screens */
+    }
+
+    footer {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        align-items: center; /* Center links horizontally */
+    }
+
+    .footer-links li {
+        margin: 5px 0; /* Adjust margin for vertical stacking */
     }
 }
 
@@ -243,6 +295,6 @@ h1 {
     }
 
     .container {
-        padding: 60px 10px 60px;
+        padding: 20px 10px;
     }
 }
