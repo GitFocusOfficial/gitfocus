@@ -1,0 +1,322 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.header {
+    background: #fff;
+    border-bottom: 2px solid #e1e1e1;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0; /* Adjusted to cover full width */
+    z-index: 1000;
+}
+
+.header-content {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+    color: green;
+}
+
+.logo-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-size: 24px;
+    color: green;
+    line-height: 1; /* Adjust this to vertically center text within its line height */
+    display: flex;
+    align-items: center; /* Ensure the text is vertically centered within the flex container */
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.header-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 20px;
+    margin-left: 15px;
+    cursor: pointer;
+}
+
+.header-button:hover {
+    color: green;
+}
+
+.nav-toggle {
+    position: fixed; /* Fixed position to ensure it stays below the header */
+    top: 20px; /* Adjust this value to ensure it's below the header */
+    left: 250px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.nav {
+    position: fixed;
+    top: 60px; /* Adjust this value to ensure the menu is below the header */
+    left: 0;
+    background: gray;
+    width: 250px;
+    height: calc(100% - 60px); /* Adjust height to fit below the header */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 999;
+    overflow-y: auto;
+}
+
+.nav-visible {
+    transform: translateX(0);
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 20px;
+}
+
+.nav-menu li {
+    margin: 5px 0;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.menu-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.menu-item:hover {
+    background: #f4f4f4;
+}
+
+.dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-submenu {
+    list-style: none;
+    padding-left: 20px;
+    display: none;
+    transition: opacity 0.3s ease;
+}
+
+.nav-submenu-visible {
+    display: block;
+}
+
+.nav-submenu li {
+    margin: 10px 0;
+}
+
+.nav-submenu a {
+    text-decoration: none;
+    color: #555;
+}
+
+.nav-submenu a:hover {
+    color: blue;
+}
+
+.menu-settings {
+    margin-top: auto;
+}
+
+.menu-settings img {
+    margin-right: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 60px); /* Adjust height to fit below the header */
+    padding: 20px;
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+.container.shifted {
+    margin-left: 250px; /* Adjust based on the width of the menu */
+}
+
+/* Optional: Specific image sizing within main */
+main .large-img {
+    max-width: 100%; /* Adjust this value as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+h1 {
+    color: green;
+    margin-bottom: 3px;
+}
+
+.footer {
+    background: #fff;
+    border-top: 2px solid #e1e1e1;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    text-align: center;
+    z-index: 1000;
+    overflow: hidden; /* Prevent overflow */
+    transition: width 0.3s ease, margin-left 0.3s ease; /* Smooth transition */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
+    max-width: 100%; /* Ensure it doesn’t exceed the viewport width */
+    flex-wrap: wrap; /* Allow wrapping if content is too wide */
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center; /* Center the links horizontally */
+    flex-wrap: wrap; /* Allow wrapping if there’s not enough space */
+}
+
+.footer-links li {
+    display: inline-flex;
+    margin: 0 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px; /* Add padding for better spacing */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+    color: green; /* Change color on hover for better visibility */
+}
+
+.footer.shifted {
+    margin-left: 250px; /* Adjust based on the width of the menu */
+    transition: margin-left 0.3s ease; /* Smooth transition */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .header-right {
+        margin-top: 10px;
+    }
+
+    .nav {
+        width: 100%;
+        height: calc(100% - 60px); /* Adjust height to fit below the header */
+    }
+
+    .nav-menu {
+        padding: 10px;
+    }
+
+    .container.shifted {
+        margin-left: 0; /* Remove left margin on smaller screens */
+    }
+
+    main .large-img {
+        max-width: 70%; /* Adjust this value for larger screens */
+    }
+
+    footer {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .footer-content {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+    }
+
+    .footer-links {
+        flex-direction: column; /* Stack links vertically on smaller screens */
+        align-items: center; /* Center links horizontally */
+    }
+
+    .footer-links li {
+        margin: 5px 0; /* Adjust margin for vertical stacking */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .header-button {
+        font-size: 18px;
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-submenu {
+        padding-left: 15px;
+    }
+
+    .container {
+        padding: 20px 10px;
+    }
+}
+
+.sky {
+    background: radial-gradient(
+        closest-corner circle at 15% 25%,
+        #ffcf33,
+        #ffcf33 20%,
+        #ffff66 21%,
+        #bbeeff 100%
+      );
+}
